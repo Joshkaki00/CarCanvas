@@ -22,7 +22,7 @@ This project bridges the gap between introductory CS data structures and real-wo
 
 ### Objective 1: Lookup Tables & Interpolation
 
-- Working 3D lookup table system with linear interpolation
+- Working 2D lookup table system with bilinear interpolation
 - Real-time fuel injection calculations based on engine parameters (RPM, throttle position)
 - Interactive demo showing interpolation weights and indices
 
@@ -97,8 +97,8 @@ src/
 
 ## Educational Goals
 
-- Understand how multidimensional arrays represent complex real-world data
-- Learn bilinear and trilinear interpolation algorithms
+- Understand how 2D arrays represent complex real-world data
+- Learn bilinear interpolation algorithms
 - Appreciate the performance implications of data structure choices
 - Connect CS concepts to automotive engineering applications
 

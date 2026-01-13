@@ -200,27 +200,26 @@ import { useFuelCalculation } from '@features/lookup/useFuelCalculation';
 - Demonstrates the memory-speed tradeoff
 - Educational content about real-world ECU constraints
 
-## Next Steps for Development
+## Future Enhancement Ideas
 
-The skeleton is complete and ready for enhancement:
+The core project is complete. Optional enhancements could include:
 
 1. **Objective 1 Enhancements:**
-   - Add 3D lookup table support (temperature axis)
-   - Implement trilinear interpolation
-   - Add more comprehensive tests
+   - Add more comprehensive edge case tests
    - Create data visualization for interpolation weights
+   - Add export/import for custom fuel maps
 
 2. **Objective 2 Enhancements:**
-   - Add 3D surface plot visualization
-   - Implement zoom and pan controls
-   - Add temperature parameter
-   - Create heatmap visualization
+   - Add heatmap visualization option
+   - Implement zoom and pan controls for charts
+   - Add animation showing interpolation process
+   - Multiple fuel map presets (economy, performance, etc.)
 
 3. **Objective 3 Enhancements:**
-   - Add performance comparison chart
+   - Add visual performance comparison chart
    - Implement multiple benchmark scenarios
-   - Add CPU/memory profiling
-   - Create educational animations
+   - Add memory usage profiling
+   - Create educational animations explaining the tradeoffs
 
 ## Available Scripts
 
