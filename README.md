@@ -6,7 +6,7 @@ An interactive web application demonstrating how computer science data structure
 
 ## Project Overview
 
-This is a Senior Intensive project by Joshua Kakinuki that bridges the gap between introductory CS data structures and real-world automotive engineering. The application shows students that the arrays, interpolation, and lookup concepts they learn in class directly impact fuel economy in modern vehicles.
+This is a Senior Intensive project by meself that bridges the gap between introductory CS data structures and real-world automotive engineering. The application shows students that the arrays, interpolation, and lookup concepts they learn in class directly impact fuel economy in modern vehicles.
 
 ## Tech Stack
 
@@ -119,4 +119,4 @@ This project is for educational purposes as part of a Senior Intensive project.
 
 ## Author
 
-Joshua Kakinuki
+Joshkaki00
