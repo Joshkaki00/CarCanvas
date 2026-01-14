@@ -26,6 +26,16 @@ export function LookupDemo() {
       </Card>
 
       <Card title="Fuel Calculation Results">
+        <div className="p-4 mb-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded">
+          <p className="text-sm text-yellow-800 dark:text-yellow-200 font-semibold">
+            ⚠️ Implementation Incomplete
+          </p>
+          <p className="text-xs text-yellow-700 dark:text-yellow-300 mt-1">
+            The lookup table and interpolation algorithms need to be implemented.
+            Currently showing placeholder values.
+          </p>
+        </div>
+
         <div className="grid grid-cols-2 gap-4">
           <div>
             <p className="text-sm text-gray-600 dark:text-gray-400">Fuel Injection Time</p>

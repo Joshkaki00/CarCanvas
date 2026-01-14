@@ -1,37 +1,45 @@
 /**
  * Performance benchmarking utilities
  * Objective 3: Compare lookup tables vs real-time calculation
+ * 
+ * TODO: Implement performance benchmarking to compare lookup vs calculation
  */
 
 import type { PerformanceMetrics } from '@shared/types';
 
 /**
  * Run a benchmark test
+ * TODO: Implement a function that runs a given function multiple times and measures performance
+ * 
+ * @param fn - The function to benchmark
+ * @param iterations - Number of times to run the function (default 10000)
+ * @returns Performance metrics (average, min, max times)
  */
-export function runBenchmark(fn: () => void, iterations: number = 10000): PerformanceMetrics {
-  const times: number[] = [];
+export function runBenchmark(_fn: () => void, iterations: number = 10000): PerformanceMetrics {
+  // TODO: Create an array to store timing results
+  // const times: number[] = [];
 
-  // Warm-up run
-  for (let i = 0; i < 100; i += 1) {
-    fn();
-  }
+  // TODO: Warm-up run (run function 100 times without measuring)
+  // This helps stabilize performance measurements
 
-  // Actual benchmark
-  for (let i = 0; i < iterations; i += 1) {
-    const start = performance.now();
-    fn();
-    const end = performance.now();
-    times.push((end - start) * 1000); // Convert to microseconds
-  }
+  // TODO: Actual benchmark loop
+  // For each iteration:
+  //   1. Record start time with performance.now()
+  //   2. Execute the function
+  //   3. Record end time
+  //   4. Calculate duration and convert to microseconds (multiply by 1000)
+  //   5. Store in times array
 
-  const averageTime = times.reduce((sum, t) => sum + t, 0) / times.length;
-  const minTime = Math.min(...times);
-  const maxTime = Math.max(...times);
+  // TODO: Calculate statistics
+  // - Average time: sum of all times / number of iterations
+  // - Min time: Math.min(...times)
+  // - Max time: Math.max(...times)
 
+  // Placeholder return
   return {
-    averageTime,
-    minTime,
-    maxTime,
+    averageTime: 0,
+    minTime: 0,
+    maxTime: 0,
     iterations,
   };
 }
@@ -39,21 +47,18 @@ export function runBenchmark(fn: () => void, iterations: number = 10000): Perfor
 /**
  * Calculate fuel using a mathematical formula (real-time calculation)
  * This simulates what an ECU would do without lookup tables
+ * 
+ * TODO: Implement a complex calculation that simulates expensive real-time computation
+ * Make it intentionally slower than a lookup table to demonstrate the tradeoff
  */
-export function calculateFuelDirectly(rpm: number, load: number): number {
-  // Complex mathematical formula that would be too slow for real-time ECU use
-  const baseFuel = 1.5;
-  const loadFactor = load / 100;
-  const rpmFactor = rpm / 1000;
+export function calculateFuelDirectly(_rpm: number, _load: number): number {
+  // TODO: Implement fuel calculation using mathematical formulas
+  // Consider:
+  // - Base fuel amount
+  // - Load factor (throttle position)
+  // - RPM factor
+  // - Add complexity with trigonometric functions (sin, cos) to simulate expense
+  // - Multiple iterations to make it slower than lookup
 
-  // Simulate expensive calculations
-  let result = baseFuel;
-  for (let i = 0; i < 10; i += 1) {
-    result += Math.sin(rpm / 1000 + i) * 0.1;
-    result += Math.cos(load / 100 + i) * 0.1;
-  }
-
-  result += loadFactor * rpmFactor * 2.5;
-
-  return Math.max(0.5, result);
+  return 1.0; // Placeholder
 }

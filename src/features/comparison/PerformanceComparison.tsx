@@ -1,45 +1,48 @@
 /**
  * Performance comparison component
  * Objective 3: Show lookup tables vs. real-time calculation
+ * 
+ * TODO: Implement UI to run and display performance comparison
  */
 
 import { useState } from 'react';
 import { Card } from '@shared/components/Card';
-import { useFuelCalculation } from '@features/lookup/useFuelCalculation';
-import { runBenchmark, calculateFuelDirectly } from './benchmark';
 import type { PerformanceMetrics } from '@shared/types';
 
 export function PerformanceComparison() {
-  const [lookupMetrics, setLookupMetrics] = useState<PerformanceMetrics | null>(null);
-  const [calculationMetrics, setCalculationMetrics] = useState<PerformanceMetrics | null>(null);
+  const [lookupMetrics] = useState<PerformanceMetrics | null>(null);
+  const [calculationMetrics] = useState<PerformanceMetrics | null>(null);
   const [isRunning, setIsRunning] = useState(false);
 
-  const { calculateFuel } = useFuelCalculation();
+  // TODO: Import useFuelCalculation hook
+  // const { calculateFuel } = useFuelCalculation();
 
+  // TODO: Implement benchmark comparison function
   const runComparison = () => {
     setIsRunning(true);
 
     // Use setTimeout to allow UI to update
     setTimeout(() => {
-      const testRpm = 3500;
-      const testLoad = 60;
+      // TODO: Define test parameters
+      // const testRpm = 3500;
+      // const testLoad = 60;
 
-      // Benchmark lookup table
-      const lookupResults = runBenchmark(() => {
-        calculateFuel(testRpm, testLoad);
-      }, 10000);
+      // TODO: Import and use runBenchmark and calculateFuelDirectly
+      // Benchmark lookup table method
+      // Use runBenchmark() with calculateFuel function
 
-      // Benchmark direct calculation
-      const calculationResults = runBenchmark(() => {
-        calculateFuelDirectly(testRpm, testLoad);
-      }, 10000);
+      // TODO: Benchmark direct calculation method
+      // Use runBenchmark() with calculateFuelDirectly function
 
-      setLookupMetrics(lookupResults);
-      setCalculationMetrics(calculationResults);
+      // TODO: Store results in state
+      // setLookupMetrics(...)
+      // setCalculationMetrics(...)
+      
       setIsRunning(false);
     }, 100);
   };
 
+  // TODO: Calculate speedup factor
   const speedup = lookupMetrics && calculationMetrics
     ? (calculationMetrics.averageTime / lookupMetrics.averageTime).toFixed(2)
     : null;
@@ -47,6 +50,15 @@ export function PerformanceComparison() {
   return (
     <div className="space-y-6">
       <Card title="Performance Benchmark">
+        <div className="p-4 mb-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded">
+          <p className="text-sm text-yellow-800 dark:text-yellow-200 font-semibold">
+            ⚠️ Implementation Incomplete
+          </p>
+          <p className="text-xs text-yellow-700 dark:text-yellow-300 mt-1">
+            The benchmark functions need to be implemented to compare performance.
+          </p>
+        </div>
+
         <p className="text-gray-600 dark:text-gray-400 mb-4">
           Compare the performance of lookup tables (used in real ECUs) vs. calculating fuel values on-the-fly.
         </p>
