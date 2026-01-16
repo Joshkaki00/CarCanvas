@@ -94,7 +94,7 @@ interface ObjectiveCardProps {
 
 function ObjectiveCard({ number, title, description, link }: ObjectiveCardProps) {
   return (
-    <Link to={link} className="block group">
+    <Link to={link} className="block group" onTouchStart={() => {}} style={{ WebkitTapHighlightColor: 'transparent' }}>
       <Card className="h-full hover:shadow-xl border-2 hover:border-automotive-500 transition-shadow">
         <div className="space-y-4">
           <div className="flex items-center space-x-4">
