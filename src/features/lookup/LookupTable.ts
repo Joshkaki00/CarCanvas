@@ -65,12 +65,25 @@ export class LookupTable {
    * TODO: Implement binary search algorithm for O(log n) performance
    * Hint: You need to find the two indices [i, i+1] where axis[i] <= value <= axis[i+1]
    */
-  private findSurroundingIndices(_axis: number[], _value: number): [number, number] {
-    // TODO: Handle edge cases (value below minimum or above maximum)
-    
-    // TODO: Implement binary search
-    // Currently using a simple stub that returns the first two indices
-    return [0, 1];
+  private findSurroundingIndices(axis: number[], value: number): [number, number] {
+    // Handle edge cases
+    if (value <= axis[0]) return [0, 0];
+    if (value >= axis[axis.length - 1]) return [axis.length - 1, axis.length - 1];
+  
+    // Binary search for efficiency
+    let left = 0;
+    let right = axis.length - 1;
+  
+    while (right - left > 1) {
+      const mid = Math.floor((left + right) / 2);
+      if (axis[mid] <= value) {
+        left = mid;
+      } else {
+        right = mid;
+      }
+    }
+  
+    return [left, right];
   }
 
   /**
