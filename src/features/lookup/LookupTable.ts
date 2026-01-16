@@ -22,7 +22,7 @@ export class LookupTable {
     const rpmIndices = this.findSurroundingIndices(this.rpmAxis, rpm);
     const loadIndices = this.findSurroundingIndices(this.loadAxis, load);
 
-    // TODO: Calculate interpolation weights (0 to 1)
+    // Calculate interpolation weights (0 to 1)
     const rpmWeight = this.calculateWeight(
       this.rpmAxis[rpmIndices[0]],
       this.rpmAxis[rpmIndices[1]],
@@ -34,7 +34,7 @@ export class LookupTable {
       load,
     );
 
-    // TODO: Perform bilinear interpolation
+    // Perform bilinear interpolation
     const value = this.bilinearInterpolate(rpmIndices, loadIndices, rpmWeight, loadWeight);
 
     return {
