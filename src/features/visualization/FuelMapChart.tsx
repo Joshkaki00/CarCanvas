@@ -50,8 +50,8 @@ export function FuelMapChart({ data, rpmAxis, loadAxis }: FuelMapChartProps) {
   ];
 
   return (
-    <ResponsiveContainer width="100%" height={700}>
-      <LineChart data={chartData} margin={{ top: 20, right: 20, left: 20, bottom: 150 }}>
+    <ResponsiveContainer width="100%" height={800}>
+      <LineChart data={chartData} margin={{ top: 20, right: 20, left: 20, bottom: 200 }}>
         <CartesianGrid strokeDasharray="3 3" className="stroke-gray-300 dark:stroke-gray-700" />
         <XAxis
           dataKey="rpm"
@@ -76,7 +76,7 @@ export function FuelMapChart({ data, rpmAxis, loadAxis }: FuelMapChartProps) {
           layout="horizontal"
           verticalAlign="bottom"
           align="center"
-          wrapperStyle={{ paddingTop: '60px' }}
+          wrapperStyle={{ paddingTop: '80px', lineHeight: '2' }}
         />
         {loadAxis.map((load, idx) => (
           <Line
