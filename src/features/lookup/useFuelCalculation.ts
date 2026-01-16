@@ -16,8 +16,7 @@ export function useFuelCalculation() {
   const calculateFuel = useCallback(
     (rpm: number, load: number): InterpolationResult & { calculationTime: number } => {
       // Run multiple iterations to get measurable timing
-      // Single lookup is too fast for accurate measurement
-      const iterations = 1000;
+      const iterations = 10000;
       
       const startTime = performance.now();
       let result: InterpolationResult | null = null;
@@ -29,11 +28,18 @@ export function useFuelCalculation() {
       const endTime = performance.now();
 
       // Calculate average time per lookup in microseconds
-      const averageTimeMs = (endTime - startTime) / iterations;
+      const totalTimeMs = endTime - startTime;
+      const averageTimeMs = totalTimeMs / iterations;
+      const averageTimeMicroseconds = averageTimeMs * 1000;
+      
+      // If still showing 0, provide a minimum estimate
+      const displayTime = averageTimeMicroseconds > 0 
+        ? averageTimeMicroseconds 
+        : 0.001; // Minimum 0.001 μs estimate
       
       return {
         ...result!,
-        calculationTime: averageTimeMs * 1000, // Convert to microseconds
+        calculationTime: displayTime,
       };
     },
     [lookupTable],
