@@ -13,31 +13,30 @@ import type { PerformanceMetrics } from '@shared/types';
  * @param iterations - Number of times to run the function (default 10000)
  * @returns Performance metrics (average, min, max times)
  */
-export function runBenchmark(_fn: () => void, iterations: number = 10000): PerformanceMetrics {
-  // TODO: Create an array to store timing results
-  // const times: number[] = [];
+export function runBenchmark(fn: () => void, iterations: number = 10000): PerformanceMetrics {
+  const times: number[] = [];
 
-  // TODO: Warm-up run (run function 100 times without measuring)
-  // This helps stabilize performance measurements
+  // Warm-up run
+  for (let i = 0; i < 100; i += 1) {
+    fn();
+  }
 
-  // TODO: Actual benchmark loop
-  // For each iteration:
-  //   1. Record start time with performance.now()
-  //   2. Execute the function
-  //   3. Record end time
-  //   4. Calculate duration and convert to microseconds (multiply by 1000)
-  //   5. Store in times array
+  // Actual benchmark
+  for (let i = 0; i < iterations; i += 1) {
+    const start = performance.now();
+    fn();
+    const end = performance.now();
+    times.push((end - start) * 1000); // Convert to microseconds
+  }
 
-  // TODO: Calculate statistics
-  // - Average time: sum of all times / number of iterations
-  // - Min time: Math.min(...times)
-  // - Max time: Math.max(...times)
+  const averageTime = times.reduce((sum, t) => sum + t, 0) / times.length;
+  const minTime = Math.min(...times);
+  const maxTime = Math.max(...times);
 
-  // Placeholder return
   return {
-    averageTime: 0,
-    minTime: 0,
-    maxTime: 0,
+    averageTime,
+    minTime,
+    maxTime,
     iterations,
   };
 }
