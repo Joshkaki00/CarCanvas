@@ -7,38 +7,38 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Automotive Dashboard Theme - IMPROVED CONTRAST
+        // Modern EV Theme
         automotive: {
-          50: '#E0F4FF',
-          100: '#B8E6FF',
-          200: '#8DD8FF',
-          300: '#5EC9FF',
-          400: '#2BB9FF',
-          500: '#0EA5E9',  // Brighter primary blue
-          600: '#0284C7',
-          700: '#0369A1',
-          800: '#075985',
-          900: '#0C4A6E',
+          50: '#FAF5FF',
+          100: '#F3E8FF',
+          200: '#E9D5FF',
+          300: '#D8B4FE',
+          400: '#C084FC',
+          500: '#7C3AED',  // Electric purple
+          600: '#6D28D9',
+          700: '#5B21B6',
+          800: '#4C1D95',
+          900: '#3B0764',
         },
         dashboard: {
-          bg: '#0F172A',        // Lighter dark blue (better contrast)
-          card: '#1E293B',      // Lighter card background
-          border: '#334155',    // Much lighter borders (visible)
-          muted: '#475569',     // Lighter muted elements
+          bg: '#F9FAFB',        // Light gray background
+          card: '#FFFFFF',      // Pure white cards
+          border: '#E5E7EB',    // Subtle borders
+          muted: '#9CA3AF',     // Gray for muted text
         },
         gauge: {
-          bg: '#1E293B',        // Gauge background
-          ring: '#334155',      // Gauge ring
+          bg: '#F3F4F6',        // Light gauge background
+          ring: '#E5E7EB',      // Light gauge ring
         },
         alert: {
-          danger: '#EF4444',    // Brighter red
-          success: '#10B981',   // Brighter green
-          warning: '#F59E0B',   // Brighter amber
+          danger: '#EF4444',    // Red for warnings
+          success: '#10B981',   // Emerald green (eco)
+          warning: '#F59E0B',   // Amber
         },
         metallic: {
-          silver: '#E2E8F0',    // Much lighter silver
-          chrome: '#F1F5F9',    // Nearly white
-          dark: '#94A3B8',      // Lighter gray
+          silver: '#6B7280',    // Medium gray
+          chrome: '#111827',    // Dark text
+          dark: '#9CA3AF',      // Light gray
         },
       },
       boxShadow: {
