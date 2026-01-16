@@ -17,27 +17,27 @@ function Layout({ children }: { children: ReactNode }) {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <nav className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+    <div className="min-h-screen bg-gradient-dashboard">
+      <nav className="bg-dashboard-card/80 backdrop-blur-sm shadow-dashboard border-b border-dashboard-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex space-x-8">
-              <Link to="/" className="flex items-center">
-                <span className="text-xl font-bold text-automotive-600 dark:text-automotive-400">
+              <Link to="/" className="flex items-center group">
+                <span className="text-xl font-bold font-digital text-automotive-500 group-hover:text-automotive-400 transition-colors tracking-wide">
                   CarFuelCanvas
                 </span>
               </Link>
 
-              <div className="hidden sm:flex sm:space-x-4">
+              <div className="hidden sm:flex sm:space-x-2">
                 {navItems.map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
                     className={cn(
-                      'inline-flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors',
+                      'inline-flex items-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200',
                       location.pathname === item.path
-                        ? 'text-automotive-600 dark:text-automotive-400 bg-automotive-50 dark:bg-automotive-900/20'
-                        : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100',
+                        ? 'text-automotive-500 bg-automotive-500/10 shadow-glow-blue-sm border border-automotive-500/30'
+                        : 'text-metallic-silver hover:text-automotive-400 hover:bg-dashboard-muted/50',
                     )}
                   >
                     {item.label}
@@ -51,10 +51,10 @@ function Layout({ children }: { children: ReactNode }) {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">{children}</main>
 
-      <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12">
+      <footer className="bg-dashboard-card/60 backdrop-blur-sm border-t border-dashboard-border mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <p className="text-center text-sm text-gray-600 dark:text-gray-400">
-            Senior Intensive Project by Joshkaki00 - Demonstrating CS Data Structures in Automotive ECUs
+          <p className="text-center text-sm text-metallic-dark">
+            Senior Intensive Project by <span className="text-automotive-500 font-semibold">Joshua Kakinuki</span> - Demonstrating CS Data Structures in Automotive ECUs
           </p>
         </div>
       </footer>
