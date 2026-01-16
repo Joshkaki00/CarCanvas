@@ -28,19 +28,17 @@ function Layout({ children }: { children: ReactNode }) {
                 </span>
               </Link>
 
-              <div className="hidden sm:flex sm:space-x-2">
+              <div className="hidden sm:flex sm:space-x-8">
                 {navItems.map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
-                    onTouchStart={() => {}}
                     className={cn(
-                      'inline-flex items-center px-4 py-2 text-sm font-semibold rounded-lg focus:outline-none',
+                      'text-sm font-semibold py-2',
                       location.pathname === item.path
-                        ? 'text-white bg-automotive-500 shadow-lg border-2 border-automotive-600'
-                        : 'text-gray-700 border-2 border-transparent',
+                        ? 'text-automotive-600 border-b-2 border-automotive-600'
+                        : 'text-gray-600',
                     )}
-                    style={{ WebkitTapHighlightColor: 'transparent' }}
                   >
                     {item.label}
                   </Link>
