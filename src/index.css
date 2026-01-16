@@ -10,6 +10,15 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
   
+  /* Remove focus outlines globally */
+  *:focus {
+    outline: none !important;
+  }
+  
+  *:focus-visible {
+    outline: none !important;
+  }
+  
   /* Modern EV theme */
   * {
     scrollbar-width: thin;
