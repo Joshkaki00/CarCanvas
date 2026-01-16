@@ -16,30 +16,26 @@ export function PerformanceComparison() {
 
   const { calculateFuel } = useFuelCalculation();
 
-  // TODO: Import useFuelCalculation hook
-  // const { calculateFuel } = useFuelCalculation();
-
-  // TODO: Implement benchmark comparison function
   const runComparison = () => {
     setIsRunning(true);
-
+  
     // Use setTimeout to allow UI to update
     setTimeout(() => {
-      // TODO: Define test parameters
-      // const testRpm = 3500;
-      // const testLoad = 60;
-
-      // TODO: Import and use runBenchmark and calculateFuelDirectly
-      // Benchmark lookup table method
-      // Use runBenchmark() with calculateFuel function
-
-      // TODO: Benchmark direct calculation method
-      // Use runBenchmark() with calculateFuelDirectly function
-
-      // TODO: Store results in state
-      // setLookupMetrics(...)
-      // setCalculationMetrics(...)
-      
+      const testRpm = 3500;
+      const testLoad = 60;
+  
+      // Benchmark lookup table
+      const lookupResults = runBenchmark(() => {
+        calculateFuel(testRpm, testLoad);
+      }, 10000);
+  
+      // Benchmark direct calculation
+      const calculationResults = runBenchmark(() => {
+        calculateFuelDirectly(testRpm, testLoad);
+      }, 10000);
+  
+      setLookupMetrics(lookupResults);
+      setCalculationMetrics(calculationResults);
       setIsRunning(false);
     }, 100);
   };
