@@ -7,11 +7,11 @@ import { LookupDemo } from '@features/lookup/LookupDemo';
 export function LookupPage() {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
-      <div className="space-y-2">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
+      <div className="space-y-3 mb-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">
           Objective 1: Lookup Tables & Interpolation
         </h1>
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-lg text-gray-600 max-w-3xl leading-normal">
           Experience how ECUs use 2D/3D lookup tables with linear interpolation to calculate optimal fuel injection in
           real-time.
         </p>

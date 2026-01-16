@@ -8,11 +8,11 @@ import { Card } from '@shared/components/Card';
 export function Home() {
   return (
     <div className="max-w-6xl mx-auto space-y-8">
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100">
+      <div className="text-center space-y-3 mb-10">
+        <h1 className="text-4xl font-bold text-gray-900 mb-3">
           CarFuelCanvas
         </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400">
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-normal">
           How Core Data Structures Save Fuel in Cars
         </p>
       </div>

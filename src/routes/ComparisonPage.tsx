@@ -7,11 +7,11 @@ import { PerformanceComparison } from '@features/comparison/PerformanceCompariso
 export function ComparisonPage() {
   return (
     <div className="max-w-6xl mx-auto space-y-8">
-      <div className="space-y-2">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
+      <div className="space-y-3 mb-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">
           Objective 3: Performance Comparison
         </h1>
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-lg text-gray-600 max-w-3xl leading-normal">
           Discover why ECUs use lookup tables instead of calculating fuel values in real-time.
         </p>
       </div>
