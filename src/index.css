@@ -51,6 +51,14 @@
     outline-offset: 2px;
   }
   
+  /* Kill all active/pressed states */
+  *:active,
+  a:active,
+  button:active {
+    background-color: transparent !important;
+    opacity: 1 !important;
+  }
+  
   /* Scrollbar styling with custom properties */
   * {
     scrollbar-width: thin;
