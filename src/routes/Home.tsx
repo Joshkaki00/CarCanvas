@@ -95,20 +95,20 @@ interface ObjectiveCardProps {
 function ObjectiveCard({ number, title, description, link }: ObjectiveCardProps) {
   return (
     <Link to={link} className="block group">
-      <Card className="h-full transition-all hover:scale-105 hover:shadow-xl border-2 hover:border-automotive-400">
+      <Card className="h-full hover:shadow-xl border-2 hover:border-automotive-500 transition-shadow">
         <div className="space-y-4">
           <div className="flex items-center space-x-4">
             <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-automotive-500 to-automotive-600 text-white flex items-center 
                             justify-center font-bold text-2xl shadow-lg">
               {number}
             </div>
-            <h3 className="text-xl font-bold text-gray-900 group-hover:text-automotive-600 transition-colors">
+            <h3 className="text-xl font-bold text-gray-900">
               {title}
             </h3>
           </div>
           <p className="text-gray-600 leading-relaxed">{description}</p>
-          <div className="flex items-center text-automotive-600 font-semibold group-hover:text-automotive-500 transition-colors">
-            Explore <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+          <div className="flex items-center text-automotive-600 font-semibold">
+            Explore →
           </div>
         </div>
       </Card>
