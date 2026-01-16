@@ -10,13 +10,24 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
   
-  /* Remove focus outlines globally */
+  /* Remove ALL tap/click highlights and outlines */
+  * {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
   *:focus {
     outline: none !important;
   }
   
   *:focus-visible {
     outline: none !important;
+  }
+  
+  a, button, input[type="range"] {
+    -webkit-tap-highlight-color: transparent !important;
   }
   
   /* Modern EV theme */
