@@ -26,6 +26,19 @@
   *::before,
   *::after {
     -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  /* Target all links and buttons specifically */
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  [role="button"],
+  [tabindex] {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
   }
   
   /* Accessible focus management - keep for keyboard users, hide for mouse */
