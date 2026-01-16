@@ -22,7 +22,7 @@ function Layout({ children }: { children: ReactNode }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex space-x-8">
-              <Link to="/" className="flex items-center">
+              <Link to="/" className="flex items-center" onTouchStart={() => {}} style={{ WebkitTapHighlightColor: 'transparent' }}>
                 <span className="text-xl font-bold font-digital text-automotive-600 tracking-wide">
                   CarFuelCanvas
                 </span>
