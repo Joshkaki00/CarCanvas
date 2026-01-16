@@ -95,19 +95,13 @@ interface ObjectiveCardProps {
 function ObjectiveCard({ number, title, description, link }: ObjectiveCardProps) {
   return (
     <Link to={link} className="block group" onTouchStart={() => {}} style={{ WebkitTapHighlightColor: 'transparent' }}>
-      <Card className="h-full hover:shadow-xl border-2 hover:border-automotive-500 transition-shadow">
+      <Card className="h-full hover:shadow-xl border-2 hover:border-purple-500 transition-shadow">
         <div className="space-y-4">
-          <div className="flex items-center space-x-4">
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-automotive-500 to-automotive-600 text-white flex items-center 
-                            justify-center font-bold text-2xl shadow-lg">
-              {number}
-            </div>
-            <h3 className="text-xl font-bold text-gray-900">
-              {title}
-            </h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900">
+            {title}
+          </h3>
           <p className="text-gray-600 leading-relaxed">{description}</p>
-          <div className="flex items-center text-automotive-600 font-semibold">
+          <div className="flex items-center text-purple-600 font-semibold">
             Explore →
           </div>
         </div>
