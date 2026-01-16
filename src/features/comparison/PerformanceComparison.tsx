@@ -57,8 +57,8 @@ export function PerformanceComparison() {
           type="button"
           onClick={runComparison}
           disabled={isRunning}
-          className="px-6 py-3 bg-automotive-500 text-white rounded-lg font-semibold hover:bg-automotive-600 
-                     disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+          className="px-6 py-3 bg-automotive-600 text-white rounded-lg font-semibold hover:bg-automotive-700 
+                     disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors shadow-sm"
         >
           {isRunning ? 'Running Benchmark...' : 'Run Benchmark (10,000 iterations)'}
         </button>
