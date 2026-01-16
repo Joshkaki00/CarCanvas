@@ -54,7 +54,7 @@ function Layout({ children }: { children: ReactNode }) {
       <footer className="bg-white border-t border-gray-200 mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <p className="text-center text-sm text-gray-600">
-            Senior Intensive Project by <span className="text-automotive-600 font-semibold">Joshua Kakinuki</span> - Demonstrating CS Data Structures in Automotive ECUs
+            Senior Intensive Project by <span className="text-automotive-600 font-semibold">Joshkaki00</span> - Demonstrating CS Data Structures in Automotive ECUs
           </p>
         </div>
       </footer>
