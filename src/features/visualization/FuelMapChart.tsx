@@ -9,6 +9,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  Legend,
   ResponsiveContainer,
 } from 'recharts';
 
@@ -49,29 +50,33 @@ export function FuelMapChart({ data, rpmAxis, loadAxis }: FuelMapChartProps) {
   ];
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
-      <LineChart data={chartData} margin={{ top: 20, right: 20, left: 50, bottom: 50 }}>
-        <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+    <ResponsiveContainer width="100%" height={500}>
+      <LineChart data={chartData} margin={{ top: 20, right: 20, left: 20, bottom: 60 }}>
+        <CartesianGrid strokeDasharray="3 3" className="stroke-gray-300 dark:stroke-gray-700" />
         <XAxis
           dataKey="rpm"
-          label={{ value: 'Engine RPM', position: 'insideBottom', offset: -10, style: { fontWeight: 600 } }}
-          stroke="#6b7280"
+          label={{ value: 'RPM', position: 'insideBottom', offset: -10 }}
+          className="text-gray-600 dark:text-gray-400"
         />
         <YAxis
-          label={{ value: 'Fuel Injection (ms)', angle: -90, position: 'insideLeft', style: { fontWeight: 600 } }}
-          stroke="#6b7280"
+          label={{ value: 'Fuel (ms)', angle: -90, position: 'insideLeft' }}
+          className="text-gray-600 dark:text-gray-400"
           tickFormatter={(val) => val.toFixed(1)}
         />
         <Tooltip
           contentStyle={{
-            backgroundColor: 'white',
-            border: '1px solid #d1d5db',
+            backgroundColor: 'rgba(255, 255, 255, 0.95)',
+            border: '1px solid #ccc',
             borderRadius: '8px',
-            padding: '12px',
-            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+            padding: '10px',
           }}
-          formatter={(value) => typeof value === 'number' ? [value.toFixed(2) + ' ms', ''] : value}
-          labelFormatter={(label) => `RPM: ${label}`}
+          formatter={(value) => typeof value === 'number' ? value.toFixed(2) + ' ms' : value}
+        />
+        <Legend 
+          layout="horizontal"
+          verticalAlign="bottom"
+          align="center"
+          wrapperStyle={{ paddingTop: '20px' }}
         />
         {loadAxis.map((load, idx) => (
           <Line
@@ -82,7 +87,6 @@ export function FuelMapChart({ data, rpmAxis, loadAxis }: FuelMapChartProps) {
             name={`${load}% Load`}
             dot={false}
             strokeWidth={2}
-            animationDuration={300}
           />
         ))}
       </LineChart>
