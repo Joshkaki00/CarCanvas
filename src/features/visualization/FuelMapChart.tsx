@@ -1,12 +1,5 @@
 /**
  * 3D-like Fuel Map Visualization using Recharts
- * Objective 2: Create interactive 2D visualization of fuel maps
- * 
- * TODO: Implement an interactive chart showing how fuel varies with RPM and load
- * - Use Recharts library (LineChart, BarChart, or ScatterChart)
- * - Transform 2D fuel map data into chart-compatible format
- * - Show multiple lines for different load levels
- * - Add proper axes labels and legend
  */
 
 interface FuelMapChartProps {
