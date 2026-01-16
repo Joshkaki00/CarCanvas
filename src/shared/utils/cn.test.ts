@@ -12,7 +12,9 @@ describe('cn', () => {
   });
 
   it('should handle conditional classes', () => {
-    const result = cn('base', true && 'truthy', false && 'falsy');
+    const isActive = true;
+    const isDisabled = false;
+    const result = cn('base', isActive && 'truthy', isDisabled && 'falsy');
     expect(result).toBe('base truthy');
   });
 
