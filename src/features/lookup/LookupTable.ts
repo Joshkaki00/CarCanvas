@@ -1,13 +1,3 @@
-/**
- * Core Lookup Table implementation for ECU fuel map simulation
- * Objective 1: Implement a working 3D lookup table system with linear interpolation
- * 
- * TODO: This is a skeleton implementation. You need to implement:
- * - Binary search algorithm for finding surrounding indices
- * - Weight calculation for interpolation
- * - Bilinear interpolation algorithm
- */
-
 import type { FuelMap2D, LookupTableConfig, InterpolationResult } from './types';
 
 export class LookupTable {
@@ -25,10 +15,10 @@ export class LookupTable {
 
   /**
    * Perform 2D lookup with bilinear interpolation
-   * TODO: Implement the complete lookup logic
+   * Implement the complete lookup logic
    */
   lookup(rpm: number, load: number): InterpolationResult {
-    // TODO: Find surrounding indices for RPM and load
+    // Find surrounding indices for RPM and load
     const rpmIndices = this.findSurroundingIndices(this.rpmAxis, rpm);
     const loadIndices = this.findSurroundingIndices(this.loadAxis, load);
 
