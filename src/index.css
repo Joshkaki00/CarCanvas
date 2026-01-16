@@ -2,38 +2,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
+  /* Root-level CSS custom properties for consistency */
+  :root {
+    --color-bg-gradient-start: #F9FAFB;
+    --color-bg-gradient-end: #E5E7EB;
+    --color-text-primary: #111827;
+    --color-primary: #7C3AED;
+    --color-primary-dark: #6D28D9;
+    --color-border: #E5E7EB;
+    --font-primary: 'Inter', system-ui, sans-serif;
+  }
+  
   body {
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(135deg, #F9FAFB 0%, #E5E7EB 100%);
-    color: #111827;
-    font-family: 'Inter', system-ui, sans-serif;
+    background: linear-gradient(135deg, var(--color-bg-gradient-start) 0%, var(--color-bg-gradient-end) 100%);
+    color: var(--color-text-primary);
+    font-family: var(--font-primary);
   }
   
-  /* Remove ALL tap/click highlights and outlines */
-  * {
-    -webkit-tap-highlight-color: transparent !important;
-    -webkit-touch-callout: none !important;
-    -webkit-user-select: none;
-    user-select: none;
+  /* Remove tap highlights - avoid overuse of !important */
+  *,
+  *::before,
+  *::after {
+    -webkit-tap-highlight-color: transparent;
   }
   
+  /* Accessible focus management - keep for keyboard users, hide for mouse */
   *:focus {
-    outline: none !important;
+    outline: none;
   }
   
   *:focus-visible {
-    outline: none !important;
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
   }
   
-  a, button, input[type="range"] {
-    -webkit-tap-highlight-color: transparent !important;
-  }
-  
-  /* Modern EV theme */
+  /* Scrollbar styling with custom properties */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #7C3AED #E5E7EB;
+    scrollbar-color: var(--color-primary) var(--color-border);
   }
   
   *::-webkit-scrollbar {
@@ -42,15 +50,26 @@
   }
   
   *::-webkit-scrollbar-track {
-    background: #E5E7EB;
+    background: var(--color-border);
   }
   
   *::-webkit-scrollbar-thumb {
-    background: #7C3AED;
+    background: var(--color-primary);
     border-radius: 4px;
   }
   
   *::-webkit-scrollbar-thumb:hover {
-    background: #6D28D9;
+    background: var(--color-primary-dark);
+  }
+  
+  /* Support for prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
