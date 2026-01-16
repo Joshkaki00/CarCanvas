@@ -22,8 +22,8 @@ function Layout({ children }: { children: ReactNode }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex space-x-8">
-              <Link to="/" className="flex items-center group">
-                <span className="text-xl font-bold font-digital text-automotive-600 group-hover:text-automotive-500 transition-colors tracking-wide">
+              <Link to="/" className="flex items-center">
+                <span className="text-xl font-bold font-digital text-automotive-600 tracking-wide">
                   CarFuelCanvas
                 </span>
               </Link>
