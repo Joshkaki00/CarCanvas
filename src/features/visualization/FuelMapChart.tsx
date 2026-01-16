@@ -2,6 +2,17 @@
  * 3D-like Fuel Map Visualization using Recharts
  */
 
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from 'recharts';
+
 interface FuelMapChartProps {
   data: number[][];
   rpmAxis: number[];
