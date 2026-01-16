@@ -14,9 +14,6 @@ export function LookupDemo() {
 
   const { calculateFuel } = useFuelCalculation();
   const result = calculateFuel(rpm, load);
-  
-  // Debug: Log the actual calculation time
-  console.log('Calculation time:', result.calculationTime, 'μs');
 
   return (
     <div className="space-y-6">
