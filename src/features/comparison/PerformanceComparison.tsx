@@ -48,14 +48,6 @@ export function PerformanceComparison() {
   return (
     <div className="space-y-6">
       <Card title="Performance Benchmark">
-        <div className="p-4 mb-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded">
-          <p className="text-sm text-yellow-800 dark:text-yellow-200 font-semibold">
-            ⚠️ Implementation Incomplete
-          </p>
-          <p className="text-xs text-yellow-700 dark:text-yellow-300 mt-1">
-            The benchmark functions need to be implemented to compare performance.
-          </p>
-        </div>
 
         <p className="text-gray-600 dark:text-gray-400 mb-4">
           Compare the performance of lookup tables (used in real ECUs) vs. calculating fuel values on-the-fly.
