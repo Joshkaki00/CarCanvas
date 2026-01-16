@@ -62,8 +62,6 @@ export class LookupTable {
 
   /**
    * Find the two surrounding indices in an axis array
-   * TODO: Implement binary search algorithm for O(log n) performance
-   * Hint: You need to find the two indices [i, i+1] where axis[i] <= value <= axis[i+1]
    */
   private findSurroundingIndices(axis: number[], value: number): [number, number] {
     // Handle edge cases
@@ -88,14 +86,10 @@ export class LookupTable {
 
   /**
    * Calculate interpolation weight (0 to 1)
-   * TODO: Implement linear interpolation weight calculation
-   * Formula: weight = (value - lower) / (upper - lower)
    */
-  private calculateWeight(_lower: number, _upper: number, _value: number): number {
-    // TODO: Handle case where lower === upper
-    
-    // TODO: Calculate and return the weight (0 to 1)
-    return 0; // Placeholder
+  private calculateWeight(lower: number, upper: number, value: number): number {
+    if (lower === upper) return 0;
+    return (value - lower) / (upper - lower);
   }
 
   /**
