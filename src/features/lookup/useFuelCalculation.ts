@@ -12,23 +12,28 @@ export function useFuelCalculation() {
   // Create lookup table instance (memoized for performance)
   const lookupTable = useMemo(() => new LookupTable(createSampleFuelMap()), []);
 
-  // TODO: Calculate fuel amount with performance tracking
-  // Use performance.now() to measure execution time
+  // Calculate fuel amount with performance tracking
   const calculateFuel = useCallback(
     (rpm: number, load: number): InterpolationResult & { calculationTime: number } => {
-      // TODO: Track start time using performance.now()
+      // Run multiple iterations to get measurable timing
+      // Single lookup is too fast for accurate measurement
+      const iterations = 1000;
+      
       const startTime = performance.now();
+      let result: InterpolationResult | null = null;
       
-      // Perform lookup
-      const result = lookupTable.lookup(rpm, load);
+      for (let i = 0; i < iterations; i += 1) {
+        result = lookupTable.lookup(rpm, load);
+      }
       
-      // TODO: Track end time and calculate duration
       const endTime = performance.now();
 
-      // TODO: Convert milliseconds to microseconds (multiply by 1000)
+      // Calculate average time per lookup in microseconds
+      const averageTimeMs = (endTime - startTime) / iterations;
+      
       return {
-        ...result,
-        calculationTime: (endTime - startTime) * 1000,
+        ...result!,
+        calculationTime: averageTimeMs * 1000, // Convert to microseconds
       };
     },
     [lookupTable],
