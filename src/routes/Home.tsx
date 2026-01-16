@@ -92,7 +92,7 @@ interface ObjectiveCardProps {
   link: string;
 }
 
-function ObjectiveCard({ number, title, description, link }: ObjectiveCardProps) {
+function ObjectiveCard({ title, description, link }: ObjectiveCardProps) {
   return (
     <Link to={link} className="block group" onTouchStart={() => {}} style={{ WebkitTapHighlightColor: 'transparent' }}>
       <Card className="h-full hover:shadow-xl border-2 hover:border-purple-500 transition-shadow">
