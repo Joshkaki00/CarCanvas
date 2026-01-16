@@ -29,10 +29,10 @@ export function Slider({
   return (
     <div className={cn('space-y-2', className)}>
       <div className="flex justify-between items-center">
-        <label className="text-sm font-medium text-metallic-silver uppercase tracking-wide">
+        <label className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
           {label}
         </label>
-        <span className="text-lg font-bold font-digital text-automotive-500">
+        <span className="text-lg font-bold font-digital text-automotive-600">
           {value}
           {unit}
         </span>
@@ -48,14 +48,14 @@ export function Slider({
                    [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 
                    [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-automotive-500 
                    [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer
-                   [&::-webkit-slider-thumb]:shadow-glow-blue-sm [&::-webkit-slider-thumb]:border-2
-                   [&::-webkit-slider-thumb]:border-automotive-400
+                   [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:border-2
+                   [&::-webkit-slider-thumb]:border-white
                    [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5 
                    [&::-moz-range-thumb]:bg-automotive-500 [&::-moz-range-thumb]:border-2
-                   [&::-moz-range-thumb]:border-automotive-400
+                   [&::-moz-range-thumb]:border-white
                    [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:cursor-pointer"
       />
-      <div className="flex justify-between text-xs text-metallic-dark">
+      <div className="flex justify-between text-xs text-gray-500">
         <span>
           {min}
           {unit}
