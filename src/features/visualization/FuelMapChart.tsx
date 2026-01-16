@@ -50,26 +50,34 @@ export function FuelMapChart({ data, rpmAxis, loadAxis }: FuelMapChartProps) {
   ];
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
-      <LineChart data={chartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+    <ResponsiveContainer width="100%" height={500}>
+      <LineChart data={chartData} margin={{ top: 20, right: 20, left: 20, bottom: 60 }}>
         <CartesianGrid strokeDasharray="3 3" className="stroke-gray-300 dark:stroke-gray-700" />
         <XAxis
           dataKey="rpm"
-          label={{ value: 'RPM', position: 'insideBottom', offset: -5 }}
+          label={{ value: 'RPM', position: 'insideBottom', offset: -10 }}
           className="text-gray-600 dark:text-gray-400"
         />
         <YAxis
           label={{ value: 'Fuel (ms)', angle: -90, position: 'insideLeft' }}
           className="text-gray-600 dark:text-gray-400"
+          tickFormatter={(val) => val.toFixed(1)}
         />
         <Tooltip
           contentStyle={{
-            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            backgroundColor: 'rgba(255, 255, 255, 0.95)',
             border: '1px solid #ccc',
-            borderRadius: '4px',
+            borderRadius: '8px',
+            padding: '10px',
           }}
+          formatter={(value: number) => value.toFixed(2) + ' ms'}
         />
-        <Legend />
+        <Legend 
+          layout="horizontal"
+          verticalAlign="bottom"
+          align="center"
+          wrapperStyle={{ paddingTop: '20px' }}
+        />
         {loadAxis.map((load, idx) => (
           <Line
             key={load}
