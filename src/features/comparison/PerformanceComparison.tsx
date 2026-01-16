@@ -5,12 +5,16 @@
 
 import { useState } from 'react';
 import { Card } from '@shared/components/Card';
+import { useFuelCalculation } from '@features/lookup/useFuelCalculation';
+import { runBenchmark, calculateFuelDirectly } from './benchmark';
 import type { PerformanceMetrics } from '@shared/types';
 
 export function PerformanceComparison() {
-  const [lookupMetrics] = useState<PerformanceMetrics | null>(null);
-  const [calculationMetrics] = useState<PerformanceMetrics | null>(null);
+  const [lookupMetrics, setLookupMetrics] = useState<PerformanceMetrics | null>(null);
+  const [calculationMetrics, setCalculationMetrics] = useState<PerformanceMetrics | null>(null);
   const [isRunning, setIsRunning] = useState(false);
+
+  const { calculateFuel } = useFuelCalculation();
 
   // TODO: Import useFuelCalculation hook
   // const { calculateFuel } = useFuelCalculation();
