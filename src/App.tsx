@@ -51,10 +51,10 @@ function Layout({ children }: { children: ReactNode }) {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">{children}</main>
 
-      <footer className="bg-white border-t border-gray-200 mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <p className="text-center text-sm text-gray-600">
-            Project by <span className="text-automotive-600 font-semibold">Joshkaki00</span> - Demonstrating CS Data Structures in Automotive ECUs
+      <footer className="bg-white border-t border-gray-200 mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <p className="text-center text-sm text-gray-500 max-w-none leading-normal mb-0">
+            Project by <span className="text-purple-600 font-semibold">Joshkaki00</span> · Demonstrating CS Data Structures in Automotive ECUs
           </p>
         </div>
       </footer>
