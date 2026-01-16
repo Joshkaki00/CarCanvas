@@ -45,17 +45,23 @@ export function runBenchmark(fn: () => void, iterations: number = 10000): Perfor
  * Calculate fuel using a mathematical formula (real-time calculation)
  * This simulates what an ECU would do without lookup tables
  * 
- * TODO: Implement a complex calculation that simulates expensive real-time computation
+ * Implement a complex calculation that simulates expensive real-time computation
  * Make it intentionally slower than a lookup table to demonstrate the tradeoff
  */
-export function calculateFuelDirectly(_rpm: number, _load: number): number {
-  // TODO: Implement fuel calculation using mathematical formulas
-  // Consider:
-  // - Base fuel amount
-  // - Load factor (throttle position)
-  // - RPM factor
-  // - Add complexity with trigonometric functions (sin, cos) to simulate expense
-  // - Multiple iterations to make it slower than lookup
+export function calculateFuelDirectly(rpm: number, load: number): number {
+  // Complex mathematical formula that would be too slow for real-time ECU use
+  const baseFuel = 1.5;
+  const loadFactor = load / 100;
+  const rpmFactor = rpm / 1000;
 
-  return 1.0; // Placeholder
+  // Simulate expensive calculations
+  let result = baseFuel;
+  for (let i = 0; i < 10; i += 1) {
+    result += Math.sin(rpm / 1000 + i) * 0.1;
+    result += Math.cos(load / 100 + i) * 0.1;
+  }
+
+  result += loadFactor * rpmFactor * 2.5;
+
+  return Math.max(0.5, result);
 }
