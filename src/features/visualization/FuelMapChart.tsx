@@ -70,7 +70,7 @@ export function FuelMapChart({ data, rpmAxis, loadAxis }: FuelMapChartProps) {
             borderRadius: '8px',
             padding: '10px',
           }}
-          formatter={(value: number) => value.toFixed(2) + ' ms'}
+          formatter={(value) => typeof value === 'number' ? value.toFixed(2) + ' ms' : value}
         />
         <Legend 
           layout="horizontal"
