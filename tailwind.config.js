@@ -7,38 +7,38 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Automotive Dashboard Theme
+        // Automotive Dashboard Theme - IMPROVED CONTRAST
         automotive: {
-          50: '#E6F7FF',
-          100: '#BAE7FF',
-          200: '#91D5FF',
-          300: '#69C0FF',
-          400: '#40A9FF',
-          500: '#00A8FF',  // Primary electric blue
-          600: '#0089D0',
-          700: '#006BA1',
-          800: '#004D73',
-          900: '#003044',
+          50: '#E0F4FF',
+          100: '#B8E6FF',
+          200: '#8DD8FF',
+          300: '#5EC9FF',
+          400: '#2BB9FF',
+          500: '#0EA5E9',  // Brighter primary blue
+          600: '#0284C7',
+          700: '#0369A1',
+          800: '#075985',
+          900: '#0C4A6E',
         },
         dashboard: {
-          bg: '#0C0F13',        // Near-black background
-          card: '#1A1D23',      // Card background
-          border: '#2A2D35',    // Borders
-          muted: '#3A3D45',     // Muted elements
+          bg: '#0F172A',        // Lighter dark blue (better contrast)
+          card: '#1E293B',      // Lighter card background
+          border: '#334155',    // Much lighter borders (visible)
+          muted: '#475569',     // Lighter muted elements
         },
         gauge: {
-          bg: '#1E2228',        // Gauge background
-          ring: '#2A2D35',      // Gauge ring
+          bg: '#1E293B',        // Gauge background
+          ring: '#334155',      // Gauge ring
         },
         alert: {
-          danger: '#FF3860',    // Red for warnings
-          success: '#00E676',   // Green for success/eco
-          warning: '#FFB020',   // Amber for caution
+          danger: '#EF4444',    // Brighter red
+          success: '#10B981',   // Brighter green
+          warning: '#F59E0B',   // Brighter amber
         },
         metallic: {
-          silver: '#C0C0C0',
-          chrome: '#E8E8E8',
-          dark: '#8A8A8A',
+          silver: '#E2E8F0',    // Much lighter silver
+          chrome: '#F1F5F9',    // Nearly white
+          dark: '#94A3B8',      // Lighter gray
         },
       },
       boxShadow: {
