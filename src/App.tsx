@@ -34,10 +34,10 @@ function Layout({ children }: { children: ReactNode }) {
                     key={item.path}
                     to={item.path}
                     className={cn(
-                      'inline-flex items-center px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-200',
+                      'inline-flex items-center px-4 py-2 text-sm font-semibold rounded-lg',
                       location.pathname === item.path
                         ? 'text-white bg-automotive-500 shadow-lg border-2 border-automotive-600'
-                        : 'text-metallic-silver hover:text-automotive-600 hover:bg-automotive-50 border border-transparent',
+                        : 'text-gray-600 bg-gray-100 border-2 border-transparent',
                     )}
                   >
                     {item.label}
