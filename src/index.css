@@ -5,15 +5,15 @@
   body {
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(135deg, #0C0F13 0%, #1A1D23 100%);
-    color: #E8E8E8;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    color: #F1F5F9;
     font-family: 'Inter', system-ui, sans-serif;
   }
   
   /* Automotive theme always on - no light mode */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #00A8FF #1A1D23;
+    scrollbar-color: #0EA5E9 #1E293B;
   }
   
   *::-webkit-scrollbar {
@@ -22,15 +22,15 @@
   }
   
   *::-webkit-scrollbar-track {
-    background: #1A1D23;
+    background: #1E293B;
   }
   
   *::-webkit-scrollbar-thumb {
-    background: #00A8FF;
+    background: #0EA5E9;
     border-radius: 4px;
   }
   
   *::-webkit-scrollbar-thumb:hover {
-    background: #40A9FF;
+    background: #0284C7;
   }
 }
