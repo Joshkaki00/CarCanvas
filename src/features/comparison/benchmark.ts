@@ -1,15 +1,13 @@
 /**
  * Performance benchmarking utilities
  * Objective 3: Compare lookup tables vs real-time calculation
- * 
- * TODO: Implement performance benchmarking to compare lookup vs calculation
  */
 
 import type { PerformanceMetrics } from '@shared/types';
 
 /**
  * Run a benchmark test
- * TODO: Implement a function that runs a given function multiple times and measures performance
+ * Implement a function that runs a given function multiple times and measures performance
  * 
  * @param fn - The function to benchmark
  * @param iterations - Number of times to run the function (default 10000)
