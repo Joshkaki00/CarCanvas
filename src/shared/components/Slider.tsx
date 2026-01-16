@@ -29,10 +29,10 @@ export function Slider({
   return (
     <div className={cn('space-y-2', className)}>
       <div className="flex justify-between items-center">
-        <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+        <label className="text-sm font-medium text-metallic-silver uppercase tracking-wide">
           {label}
         </label>
-        <span className="text-sm font-semibold text-automotive-600 dark:text-automotive-400">
+        <span className="text-lg font-bold font-digital text-automotive-500">
           {value}
           {unit}
         </span>
@@ -44,15 +44,18 @@ export function Slider({
         step={step}
         value={value}
         onChange={handleChange}
-        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 
-                   [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 
-                   [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:bg-automotive-500 
+        className="w-full h-2 bg-gauge-bg rounded-lg appearance-none cursor-pointer border border-dashboard-border
+                   [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 
+                   [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-automotive-500 
                    [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer
-                   [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 
-                   [&::-moz-range-thumb]:bg-automotive-500 [&::-moz-range-thumb]:border-0 
+                   [&::-webkit-slider-thumb]:shadow-glow-blue-sm [&::-webkit-slider-thumb]:border-2
+                   [&::-webkit-slider-thumb]:border-automotive-400
+                   [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5 
+                   [&::-moz-range-thumb]:bg-automotive-500 [&::-moz-range-thumb]:border-2
+                   [&::-moz-range-thumb]:border-automotive-400
                    [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:cursor-pointer"
       />
-      <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400">
+      <div className="flex justify-between text-xs text-metallic-dark">
         <span>
           {min}
           {unit}
