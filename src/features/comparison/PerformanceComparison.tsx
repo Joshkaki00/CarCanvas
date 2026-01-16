@@ -1,8 +1,6 @@
 /**
  * Performance comparison component
  * Objective 3: Show lookup tables vs. real-time calculation
- * 
- * TODO: Implement UI to run and display performance comparison
  */
 
 import { useState } from 'react';
