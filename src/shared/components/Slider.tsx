@@ -45,6 +45,7 @@ export function Slider({
         value={value}
         onChange={handleChange}
         className="w-full h-2 bg-gauge-bg rounded-lg appearance-none cursor-pointer border border-dashboard-border
+                   focus:outline-none focus:ring-0
                    [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 
                    [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-automotive-500 
                    [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer
