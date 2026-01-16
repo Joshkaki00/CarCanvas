@@ -37,8 +37,8 @@ function Layout({ children }: { children: ReactNode }) {
                     className={cn(
                       'inline-flex items-center px-4 py-2 text-sm font-semibold rounded-lg focus:outline-none',
                       location.pathname === item.path
-                        ? 'text-white bg-automotive-500 border-2 border-automotive-600'
-                        : 'text-gray-700',
+                        ? 'text-white bg-automotive-500 shadow-lg border-2 border-automotive-600'
+                        : 'text-gray-700 border-2 border-transparent',
                     )}
                     style={{ WebkitTapHighlightColor: 'transparent' }}
                   >
