@@ -49,7 +49,7 @@ export function PerformanceComparison() {
     <div className="space-y-6">
       <Card title="Performance Benchmark">
 
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
+        <p className="text-gray-600 mb-6">
           Compare the performance of lookup tables (used in real ECUs) vs. calculating fuel values on-the-fly.
         </p>
 
@@ -57,10 +57,10 @@ export function PerformanceComparison() {
           type="button"
           onClick={runComparison}
           disabled={isRunning}
-          className="px-6 py-3 bg-automotive-600 text-white rounded-lg font-semibold hover:bg-automotive-700 
-                     disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors shadow-sm"
+          className="px-8 py-4 bg-purple-600 text-white text-lg rounded-lg font-bold hover:bg-purple-700 
+                     disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors shadow-lg"
         >
-          {isRunning ? 'Running Benchmark...' : 'Run Benchmark (10,000 iterations)'}
+          {isRunning ? 'Running Benchmark...' : 'Run Benchmark'}
         </button>
       </Card>
 
