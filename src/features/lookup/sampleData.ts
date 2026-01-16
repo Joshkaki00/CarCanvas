@@ -1,12 +1,5 @@
 /**
  * Sample ECU fuel map data for demonstration
- * TODO: Generate realistic automotive fuel injection map data
- * 
- * Hints:
- * - RPM range: 1000-7000 RPM (typical gasoline engine)
- * - Load range: 0-100% (throttle position)
- * - Fuel values: milliseconds of injection time (typically 0.5-20ms)
- * - Fuel should increase with both RPM and load
  */
 
 import type { LookupTableConfig } from './types';
