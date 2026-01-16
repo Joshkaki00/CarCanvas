@@ -3,9 +3,10 @@
  * Objective 3: Show lookup tables vs. real-time calculation
  */
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Card } from '@shared/components/Card';
-import { useFuelCalculation } from '@features/lookup/useFuelCalculation';
+import { LookupTable } from '@features/lookup/LookupTable';
+import { createSampleFuelMap } from '@features/lookup/sampleData';
 import { runBenchmark, calculateFuelDirectly } from './benchmark';
 import type { PerformanceMetrics } from '@shared/types';
 
@@ -14,7 +15,8 @@ export function PerformanceComparison() {
   const [calculationMetrics, setCalculationMetrics] = useState<PerformanceMetrics | null>(null);
   const [isRunning, setIsRunning] = useState(false);
 
-  const { calculateFuel } = useFuelCalculation();
+  // Create lookup table instance directly for benchmarking
+  const lookupTable = useMemo(() => new LookupTable(createSampleFuelMap()), []);
 
   const runComparison = () => {
     setIsRunning(true);
@@ -24,9 +26,9 @@ export function PerformanceComparison() {
       const testRpm = 3500;
       const testLoad = 60;
   
-      // Benchmark lookup table
+      // Benchmark lookup table - use direct lookup, not the multi-iteration version
       const lookupResults = runBenchmark(() => {
-        calculateFuel(testRpm, testLoad);
+        lookupTable.lookup(testRpm, testLoad);
       }, 10000);
   
       // Benchmark direct calculation
