@@ -6,16 +6,16 @@ import type { LookupTableConfig } from './types';
 
 /**
  * Create a sample 2D fuel map
- * TODO: Generate a realistic fuel map with proper RPM and load axes
+ * Generate a realistic fuel map with proper RPM and load axes
  */
 export function createSampleFuelMap(): LookupTableConfig {
-  // TODO: Define RPM axis points (e.g., 1000, 1500, 2000, ..., 7000)
+  // Define RPM axis points (e.g., 1000, 1500, 2000, ..., 7000)
   const rpmAxis = [1000, 2000, 3000, 4000, 5000, 6000, 7000];
   
-  // TODO: Define load/throttle axis points (0-100%)
+  // Define load/throttle axis points (0-100%)
   const loadAxis = [0, 25, 50, 75, 100];
 
-  // TODO: Generate realistic fuel map data
+  // Generate realistic fuel map data
   // Fuel should increase with both RPM and load
   // Consider: baseFuel + (load factor) * (rpm factor) * constant
   const fuelData: number[][] = [];
