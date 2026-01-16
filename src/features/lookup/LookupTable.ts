@@ -94,29 +94,28 @@ export class LookupTable {
 
   /**
    * Perform bilinear interpolation
-   * TODO: Implement bilinear interpolation algorithm
-   * This is the core of the lookup table - it calculates values between grid points
    */
   private bilinearInterpolate(
-    _rpmIndices: [number, number],
-    _loadIndices: [number, number],
-    _rpmWeight: number,
-    _loadWeight: number,
+    rpmIndices: [number, number],
+    loadIndices: [number, number],
+    rpmWeight: number,
+    loadWeight: number,
   ): number {
-    // TODO: Get the four corner values from the fuel data grid
-    // const q11 = this.fuelData[rpmLow][loadLow];     (lower-left)
-    // const q12 = this.fuelData[rpmLow][loadHigh];    (upper-left)
-    // const q21 = this.fuelData[rpmHigh][loadLow];    (lower-right)
-    // const q22 = this.fuelData[rpmHigh][loadHigh];   (upper-right)
-
-    // TODO: Interpolate in RPM direction (horizontally)
-    // r1 = q11 * (1 - rpmWeight) + q21 * rpmWeight
-    // r2 = q12 * (1 - rpmWeight) + q22 * rpmWeight
-
-    // TODO: Interpolate in load direction (vertically)
-    // result = r1 * (1 - loadWeight) + r2 * loadWeight
-
-    return 0; // Placeholder - return actual interpolated value
+    const [rpmLow, rpmHigh] = rpmIndices;
+    const [loadLow, loadHigh] = loadIndices;
+  
+    // Get four corner values
+    const q11 = this.fuelData[rpmLow][loadLow];
+    const q12 = this.fuelData[rpmLow][loadHigh];
+    const q21 = this.fuelData[rpmHigh][loadLow];
+    const q22 = this.fuelData[rpmHigh][loadHigh];
+  
+    // Interpolate in RPM direction
+    const r1 = q11 * (1 - rpmWeight) + q21 * rpmWeight;
+    const r2 = q12 * (1 - rpmWeight) + q22 * rpmWeight;
+  
+    // Interpolate in load direction
+    return r1 * (1 - loadWeight) + r2 * loadWeight;
   }
 
   /**
